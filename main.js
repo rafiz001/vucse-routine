@@ -37,7 +37,7 @@ const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
       array[i]=new Array(10);
       if(day=="Sun"&&ghi[2]!=null&&ghi[2].v=="A")semArray.push(ghi[1].v);
      var isPreLab=2;
-     for(var j=0;j<9;j++){
+     for(var j=0;j<=9;j++){
         if(ghi[1]!=null){sem=ghi[1].v;}
         else ghi[1]={v:sem};
         var td="";
