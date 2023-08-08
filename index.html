@@ -297,7 +297,18 @@ else {
 
 document.getElementById("base").innerHTML="<a href='https://docs.google.com/spreadsheets/d/"+sheetID+"'/>Click me</a> for base routine.<br><br>&#x1F12F; Copyleft: 222311079@vu.edu.bd";
       
-
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("sw.js").then(registration=>{
+    console.log("SW Registered!");
+    console.log(registration);
+  }).catch(error=>{
+    console.log("SW Registration Failed!");
+    console.log(error);
+  })
+}
+else{
+  console.log("Service Worker is not supported in this browser");
+}
 
 
 
