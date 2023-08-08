@@ -2,8 +2,8 @@
     "name" : "Dynamic VU CSE Routine",
     "short_name" : "VU CSE Routine",
     "start_url" : ".",
-    "background_color" : "#ff4500",
-    "theme_color" : "#ff4500",
+    "background_color" : "#ffffff",
+    "theme_color" : "#00ff00",
     "display" : "standalone",
     "icons": [
         {
