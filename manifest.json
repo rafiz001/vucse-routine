@@ -9,12 +9,12 @@
     "display" : "standalone",
     "icons": [
         {
-            "src" : "cse192.png",
+            "src" : "src/img/cse192.png",
             "sizes" : "192x192",
             "type" : "image/png"
         },
         {
-            "src" : "cse512.png",
+            "src" : "src/img/cse512.png",
             "sizes" : "512x512",
             "type" : "image/png"
         }
