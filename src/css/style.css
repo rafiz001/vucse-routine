@@ -1,1 +1,98 @@
+/* Global Styles */
+#lloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
+
+/* Loader Styles */
+#loader {
+    background: #ffffff99;
+    z-index: 9999999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 10px solid #ffffff99;
+    border-radius: 50%;
+    padding: 10%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-content: center;
+    display: none;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#loader .outer {
+    position: absolute;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+#loader .inner {
+    position: absolute;
+}
+
+/* Miscellaneous Styles */
+.lab {
+    background: rgb(179, 255, 255);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+}
+
+th {
+    padding: 8px;
+    background-color: #04AA6D;
+    color: white;
+    border: 2px solid black;
+}
+
+td {
+    text-align: center;
+    padding: 8px;
+    border: 2px dashed black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.extra {
+    font-size: x-small;
+    border: 1px dotted green;
+}
+
+select {
+    font: inherit;
+}
+
+h3 {
+    text-align: center;
+}
+
+.univ {
+    text-align: center;
+    font-size: 50px;
+}
+
+#base {
+    text-align: right;
+}
+
+#base a {
+    text-decoration: none;
+    background: green;
+    color: white;
+    padding: 7px;
+}
 
