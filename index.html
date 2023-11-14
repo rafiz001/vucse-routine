@@ -105,6 +105,15 @@ h3{
   padding: 7px;
 
 }
+#notice{
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  background-color:aquamarine;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 10px;
+}
 </style>
 </head>
 <body >
@@ -114,19 +123,21 @@ h3{
 <loading id="loader"><img class="outer" src="c.png" alt=""><img  clas="inner" src="s.png" alt=""></loading>
 <h3 id="sec"></h3>
 <h3 id="effective"></h3>
+<div id="notice">Time row auto update functionality added.</div><br>
 <div style="overflow-x: auto;">
 <table  id="main-table" >
-<tr><th>Day/Time</th><th id="time1">9.0 - 10.10</th><th id="time2">10.10 - 11.20</th><th id="time3">11.20 - 12.30</th><th id="time4">12.30 - 1.40</th><th id="time5">2.30 - 3.40</th><th id="time6">3.40 - 4.50</th><th id="time7">4.50 - 6.00</th></tr>
+<tr><th>Day/Time</th><th id="time1">Auto Update</th><th id="time2">Auto Update</th><th id="time3">Auto Update</th><th id="time4">Auto Update</th><th id="time5">2Auto Update</th><th id="time6">Auto Update</th><th id="time7">Auto Update</th></tr>
 <tr id="Sun"></tr>
 <tr id="Mon"></tr>
 <tr id="Tue"></tr>
 <tr id="Wed"></tr>
 <tr id="Thu"></tr>
 </table>
+<div style="text-align: center;">For any complain or advice email me on <a href="mailto:rafiz001@protonmail.ch?subject=VU+CSE+Routine">rafiz001@protonmail.ch</a></div>
+
 </div><br><br><br>
 <div id="base"></div>
 <script >    
-alert("The time row is not dynamic yet. I'll fix it soon IN SHA ALLAH ");
 const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
     
       var semArray=[];
@@ -156,7 +167,15 @@ const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
       
       let sem="";
       let semIter=0;
-     
+     //console.log(json.table.rows[3].c[3].v);
+     document.getElementById("time1").innerHTML=json.table.rows[3].c[3].v;
+      document.getElementById("time2").innerHTML=json.table.rows[3].c[4].v;
+      document.getElementById("time3").innerHTML=json.table.rows[3].c[5].v;
+      document.getElementById("time4").innerHTML=json.table.rows[3].c[6].v;
+      document.getElementById("time5").innerHTML=json.table.rows[3].c[7].v;
+      document.getElementById("time6").innerHTML=json.table.rows[3].c[8].v;
+      document.getElementById("time7").innerHTML=json.table.rows[3].c[9].v;
+
       for(var i=4;i<json.table.rows.length;i++){
      
       var ghi=json.table.rows[i].c;
@@ -194,7 +213,7 @@ const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
         
       }
       
-     // alert(tr);
+     
       
   
         
