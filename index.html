@@ -122,24 +122,24 @@ h3{
 <h3 id="yy">loading...</h3>
 <loading id="loader"><img class="outer" src="c.png" alt=""><img  clas="inner" src="s.png" alt=""></loading>
 <h3 id="sec"></h3>
-<h3 id="effective"></h3>
-<div id="notice">Time row auto update functionality added.</div><br>
+<h3 id="effective">Spring - 2024</h3>
+<!-- <div id="notice">Time row auto update functionality added.</div><br> -->
 <div style="overflow-x: auto;">
 <table  id="main-table" >
 <tr><th>Day/Time</th><th id="time1">Auto Update</th><th id="time2">Auto Update</th><th id="time3">Auto Update</th><th id="time4">Auto Update</th><th id="time5">2Auto Update</th><th id="time6">Auto Update</th><th id="time7">Auto Update</th></tr>
-<tr id="Sun"></tr>
-<tr id="Mon"></tr>
-<tr id="Tue"></tr>
-<tr id="Wed"></tr>
-<tr id="Thu"></tr>
+<tr id="Sunday"></tr>
+<tr id="Monday"></tr>
+<tr id="Tuesday"></tr>
+<tr id="Wednesday"></tr>
+<tr id="Thursday"></tr>
 </table>
 <div style="text-align: center;">For any complain or advice email me on <a href="mailto:rafiz001@protonmail.ch?subject=VU+CSE+Routine">rafiz001@protonmail.ch</a></div>
 
 </div><br><br><br>
 <div id="base"></div>
 <script >    
-const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
-    
+const sheetID="1rWWdGiDUcCTdQk5tG2_gZIlBDQxL7avHH6t3udap04w";
+//https://docs.google.com/spreadsheets/u/0/d/1rWWdGiDUcCTdQk5tG2_gZIlBDQxL7avHH6t3udap04w/htmlview#gid=1316882511
       var semArray=[];
       window.atext="lll";
       window.array=new Array(100);
@@ -161,29 +161,29 @@ const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
      var tr="<td>"+day+extra+"</td>";
    //-- var abc=this.responseText.split("\n");
     var json=JSON.parse(this.responseText.substring(47,this.responseText.length-2));
-    if(day=="Sun")document.getElementById("effective").innerHTML= json.table.rows[2].c[0].v;
+    //if(day=="Sun")document.getElementById("effective").innerHTML= json.table.rows[2].c[0].v;
 
 
       
       let sem="";
       let semIter=0;
-     //console.log(json.table.rows[3].c[3].v);
-     document.getElementById("time1").innerHTML=json.table.rows[3].c[3].v;
-      document.getElementById("time2").innerHTML=json.table.rows[3].c[4].v;
-      document.getElementById("time3").innerHTML=json.table.rows[3].c[5].v;
-      document.getElementById("time4").innerHTML=json.table.rows[3].c[6].v;
-      document.getElementById("time5").innerHTML=json.table.rows[3].c[7].v;
-      document.getElementById("time6").innerHTML=json.table.rows[3].c[8].v;
-      document.getElementById("time7").innerHTML=json.table.rows[3].c[9].v;
+     console.log(json.table.rows);
+     document.getElementById("time1").innerHTML=json.table.rows[1].c[3].v;
+      document.getElementById("time2").innerHTML=json.table.rows[1].c[4].v;
+      document.getElementById("time3").innerHTML=json.table.rows[1].c[5].v;
+      document.getElementById("time4").innerHTML=json.table.rows[1].c[6].v;
+      document.getElementById("time5").innerHTML=json.table.rows[1].c[7].v;
+      document.getElementById("time6").innerHTML=json.table.rows[1].c[8].v;
+      document.getElementById("time7").innerHTML=json.table.rows[1].c[9].v;
 
-      for(var i=4;i<json.table.rows.length;i++){
+      for(var i=2;i<json.table.rows.length;i++){
      
       var ghi=json.table.rows[i].c;
 
      
         
       array[i]=new Array(10);
-      if(day=="Sun"&&ghi[2]!=null&&ghi[2].v=="A")semArray.push(ghi[1].v);
+      if(day=="Sunday"&&ghi[2]!=null&&ghi[2].v=="A")semArray.push(ghi[1].v);
      var isPreLab=2;
      for(var j=0;j<=9;j++){
         if(ghi[1]!=null){sem=ghi[1].v;}
@@ -220,6 +220,7 @@ const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
 
 
     }
+    
     if(willPrint)document.getElementById(day).innerHTML=tr;
     if(!willPrint){
     var select1="Semester: <select oninput='secHanldler(this.value)' title='Semester' name='sem'><option>Select Semester</option>";
@@ -231,7 +232,7 @@ const sheetID="1IkWnYEBIKQK9Jlkuooo11oEM5mtz9DUc";
     document.getElementById("yy").innerHTML=select1; 
     if(fromCookie)secHanldler(semSec[0],true);
     }
-    if(day=="Thu")document.getElementById("loader").style="display:none";
+    if(day=="Thursday")document.getElementById("loader").style="display:none";
     
 
     
@@ -282,19 +283,19 @@ function secOperation(input,fromCookie){
 var semSec=input.split(",");
 //alert("Sem: "+semSec[0]+" Sec: "+semSec[1]);
 document.getElementById("loader").style="display:flex";
-loadDoc("Sun",1,semSec[0],semSec[1],fromCookie);
+loadDoc("Sunday",1,semSec[0],semSec[1],fromCookie);
 
 
-loadDoc("Mon",1,semSec[0],semSec[1],fromCookie);
+loadDoc("Monday",1,semSec[0],semSec[1],fromCookie);
 
 
-loadDoc("Tue",1,semSec[0],semSec[1],fromCookie);
+loadDoc("Tuesday",1,semSec[0],semSec[1],fromCookie);
 
 
-loadDoc("Wed",1,semSec[0],semSec[1],fromCookie);
+loadDoc("Wednesday",1,semSec[0],semSec[1],fromCookie);
 
 
-loadDoc("Thu",1,semSec[0],semSec[1],fromCookie);
+loadDoc("Thursday",1,semSec[0],semSec[1],fromCookie);
 
  
 
