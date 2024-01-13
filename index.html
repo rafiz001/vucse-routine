@@ -114,18 +114,34 @@ h3{
   margin-right: 100px;
   padding: 10px;
 }
+
+details{
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+small{
+  font-size: xx-small;
+}
 </style>
 </head>
 <body >
-
+  <loading id="loader"><img class="outer" src="c.png" alt=""><img  clas="inner" src="s.png" alt=""></loading>
 <div class="univ">Varendra University</div><h3><code>Department of CSE</code></h3>
 <h3 id="yy">loading...</h3>
-<loading id="loader"><img class="outer" src="c.png" alt=""><img  clas="inner" src="s.png" alt=""></loading>
-<h3 id="sec"></h3>
-<h3 id="effective">Spring - 2024</h3>
+
+<h3><span id="sec"></span><br><br>
+<span id="effective">Spring - 2024 (Revised)</span></h3>
+
+<details>
+  <summary>Latest Commit:</summary><hr>
+  <p id="commit">Loading...</p>
+</details><br>
+
 <!-- <div id="notice">Time row auto update functionality added.</div><br> -->
 <div style="overflow-x: auto;">
 <table  id="main-table" >
+
 <tr><th>Day/Time</th><th id="time1">Auto Update</th><th id="time2">Auto Update</th><th id="time3">Auto Update</th><th id="time4">Auto Update</th><th id="time5">2Auto Update</th><th id="time6">Auto Update</th><th id="time7">Auto Update</th></tr>
 <tr id="Sunday"></tr>
 <tr id="Monday"></tr>
@@ -137,8 +153,25 @@ h3{
 
 </div><br><br><br>
 <div id="base"></div>
-<script >    
-const sheetID="1rWWdGiDUcCTdQk5tG2_gZIlBDQxL7avHH6t3udap04w";
+<script >   
+async function getCommit(params) {
+  
+
+
+  let url = 'https://api.github.com/repos/rafiz001/vucse-routine/commits/main';
+let response = await fetch(url);
+
+let commits = await response.json(); // read response body and parse as JSON
+var d=new Date(commits.commit.committer.date);
+document.getElementById("commit").innerHTML="<a target='_blank' href='"+commits.html_url+"'>"+commits.commit.message+"</a><br><small>"+d+"</small>";
+console.log(commits.commit.committer.date);
+
+console.log(d);
+} 
+
+getCommit();
+
+const sheetID="1IMQ6Gu_pLB4SGQ_x73yrMYCXUJLcLFAuMYMXutQiOCY";
 //https://docs.google.com/spreadsheets/u/0/d/1rWWdGiDUcCTdQk5tG2_gZIlBDQxL7avHH6t3udap04w/htmlview#gid=1316882511
       var semArray=[];
       window.atext="lll";
@@ -147,7 +180,7 @@ const sheetID="1rWWdGiDUcCTdQk5tG2_gZIlBDQxL7avHH6t3udap04w";
  function loadDoc(day="Tue",willPrint=true,givenSemester="4th",givenSection="B",fromCookie=false) {
   
   const xhttp = new XMLHttpRequest();
-  const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const d = new Date();
   let today = weekday[d.getDay()];
   let nextDay;
