@@ -351,7 +351,7 @@ else {
 document.getElementById("base").innerHTML="<a href='https://docs.google.com/spreadsheets/d/"+sheetID+"'/>Click me</a> for base routine.<br><br>&#x1F12F; Copyleft: 222311079@vu.edu.bd";
       
 if("serviceWorker" in navigator){
-  navigator.serviceWorker.register("sw.js").then(registration=>{
+  navigator.serviceWorker.register("sw.js",{scope:'./'}).then(registration=>{
     console.log("SW Registered!");
     console.log(registration);
   }).catch(error=>{
