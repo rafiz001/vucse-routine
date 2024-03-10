@@ -320,6 +320,7 @@
       if (day == nextDay) extra = "<br><span class='extra'>Next Day</span>";
 
       let y;
+      let isOffline=false;
       try {
         let x = await fetch("https://docs.google.com/spreadsheets/d/" + sheetID + "/gviz/tq?tqx=out:json&sheet=" + day + "&headers=0");
 
@@ -327,13 +328,16 @@
       } catch (error) {
         y = localStorage.getItem(day);
         document.getElementById("lastUpdated").innerHTML = "You are viewing in offline mode. Last updated: " + localStorage.getItem("date");
+        isOffline=true;
       }
       worker(y);
       function worker(y) {
+        if(!isOffline){
         localStorage.setItem(day, y);
         const d = new Date();
         const today = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
         localStorage.setItem("date", today);
+        }
 
         var tr = "<td>" + day + extra + "</td>";
         //-- var abc=this.responseText.split("\n");
