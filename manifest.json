@@ -2,10 +2,10 @@
     "name" : "Dynamic VU CSE Routine",
     "short_name" : "VU CSE Routine",
     "description": "Using this web app sudents can see their class routine in very easy way.",
-    "start_url" : "index.html",
+    "start_url" : "./index.html",
     "app_id" : "rafiz.vu.cse.routine",
-    "background_color" : "#ffffff",
-    "theme_color" : "#00ff00",
+    "background_color" : "#000d1a",
+    "theme_color" : "#000d1a",
     "display" : "standalone",
     "icons": [
         {
