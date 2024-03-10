@@ -10,6 +10,9 @@ self.addEventListener('install', e=>{
             './manifest.json',
             './s.png',
             './c.png',
+            './cse192.png',
+            './cse512.png',
+            './sw.js',
           ]);
         })
       );
