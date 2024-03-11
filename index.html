@@ -298,14 +298,37 @@
   <script>
     
     
-    function toggler() {
-      if(!localStorage.hasOwnProperty("theme"))localStorage.setItem("theme", "dark");
-      console.log((localStorage.getItem("theme")==="dark"));
-      if((localStorage.getItem("theme")==="dark")){document.getElementById("sun").classList.add("active");
+    function defaultTheme() {
+     // if(!localStorage.hasOwnProperty("theme"))localStorage.setItem("theme", "dark");
+      console.log(localStorage.getItem("theme"));
+      if(!(localStorage.getItem("theme")=="dark")){
+        document.getElementById("sun").classList.add("active");
       document.getElementById("moon").classList.remove("active");
       document.documentElement.style.setProperty('--theme', '#a0ffff');
       document.documentElement.style.setProperty('--text', '#000000');
-      isDark=false;
+      
+      }
+      else{
+        document.getElementById("moon").classList.add("active");
+      document.getElementById("sun").classList.remove("active");
+
+
+      document.documentElement.style.setProperty('--theme', '#000d1a');
+      document.documentElement.style.setProperty('--text', '#ffffff');
+      
+      
+      }
+    }
+    
+    function toggler(change=false) {
+     // if(!localStorage.hasOwnProperty("theme"))localStorage.setItem("theme", "dark");
+      console.log(localStorage.getItem("theme"));
+      if((localStorage.getItem("theme")=="dark")){
+        document.getElementById("sun").classList.add("active");
+      document.getElementById("moon").classList.remove("active");
+      document.documentElement.style.setProperty('--theme', '#a0ffff');
+      document.documentElement.style.setProperty('--text', '#000000');
+      if(change)
       localStorage.setItem("theme", "NotDark");
       }
       else{
@@ -316,14 +339,14 @@
       document.documentElement.style.setProperty('--theme', '#000d1a');
       document.documentElement.style.setProperty('--text', '#ffffff');
       
-      isDark=true;
+      if(change)
       localStorage.setItem("theme", "dark");
       }
     }
     
-    document.getElementById("body").addEventListener("load", toggler());
+    document.getElementById("body").addEventListener("load", defaultTheme());
     document.getElementById("theme").addEventListener("click", ()=>{
-      toggler();
+      toggler(true);
     });
     function cachClearer() {
       if(window.confirm("If you clear the cache, your offline saved routine may deleted.")&&caches.delete('Rafiz'))
