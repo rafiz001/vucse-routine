@@ -247,7 +247,7 @@
   <h3 id="yy">loading...</h3>
 
   <h3><span id="sec"></span><br><br>
-    <span id="effective">Spring - 2024</span>
+    <span id="effective">Summer - 2024</span>
   </h3>
 
   <details>
@@ -268,7 +268,7 @@
         <th id="time4">Auto Update</th>
         <th id="time5">2Auto Update</th>
         <th id="time6">Auto Update</th>
-        <th id="time7">Auto Update</th>
+        <!-- <th id="time7">Auto Update</th> -->
       </tr>
       <tr id="Sunday"></tr>
       <tr id="Monday"></tr>
@@ -393,7 +393,7 @@
 
     getCommit();
 
-    const sheetID = "1IMQ6Gu_pLB4SGQ_x73yrMYCXUJLcLFAuMYMXutQiOCY";
+    const sheetID = "1BOq80g5PyE9S0WXIqEc8vmPaps_4w_BZ79sBEDD_HbY";
     //https://docs.google.com/spreadsheets/u/0/d/1rWWdGiDUcCTdQk5tG2_gZIlBDQxL7avHH6t3udap04w/htmlview#gid=1316882511
     var semArray = [];
     window.atext = "lll";
@@ -447,7 +447,7 @@
         document.getElementById("time4").innerHTML = json.table.rows[1].c[6].v;
         document.getElementById("time5").innerHTML = json.table.rows[1].c[7].v;
         document.getElementById("time6").innerHTML = json.table.rows[1].c[8].v;
-        document.getElementById("time7").innerHTML = json.table.rows[1].c[9].v;
+        //document.getElementById("time7").innerHTML = json.table.rows[1].c[9].v;
 
         for (var i = 2; i < json.table.rows.length; i++) {
 
@@ -458,7 +458,7 @@
           array[i] = new Array(10);
           if (day == "Sunday" && ghi[2] != null && ghi[2].v == "A") semArray.push(ghi[1].v);
           var isPreLab = 2;
-          for (var j = 0; j <= 9; j++) {
+          for (var j = 0; j <= 8; j++) {
             if (ghi[1] != null) { sem = ghi[1].v; }
             else ghi[1] = { v: sem };
             var td = "";
