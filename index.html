@@ -232,6 +232,14 @@
   border-radius: 15px;
  
 }
+@media (min-width:801px)  { 
+  
+  body{
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+ }
   </style>
 </head> 
  
@@ -351,6 +359,7 @@
     function cachClearer() {
       if(window.confirm("If you clear the cache, your offline saved routine may deleted.")&&caches.delete('Rafiz'))
       alert("Cache cleared");
+      window.location.reload();
     
     }
     let installPrompt = null;
@@ -468,7 +477,8 @@
             if (ghi[2] != null && ghi[1].v == givenSemester && ghi[2].v == givenSection) {
               if (j > 2 && isPreLab > 1) {
                 var sss = "";
-                if (/\[.{0,}\] ?\[.{0,}\]/i.test(td)) {
+                if (/\[.{0,}\] ?\[.{0,}\]/i.test(td)&&json.table.rows[i].c[j+1]==null) {
+                  console.log(json.table.rows[i].c[j+1]);
                   sss = " colspan='2' class='lab' ";
                   isPreLab = 0;
                 }
