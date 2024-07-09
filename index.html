@@ -263,7 +263,7 @@
     <p id="commit">Loading...</p>
   </details><br>
   <div style="text-align: center;" id="lastUpdated"></div>
-  <div style="display: flex;justify-content: center;"><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Frafiz001.github.io%2Fvucse-routine%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a></div>
+  
   <!-- <div id="notice">Time row auto update functionality added.</div><br> -->
   <div style="overflow-x: auto;">
     <table id="main-table">
@@ -288,6 +288,7 @@
         href="mailto:rafiz001@protonmail.ch?subject=VU+CSE+Routine">rafiz001@protonmail.ch</a></div>
 
   </div><br>
+  <div  style="text-align: center; margin-bottom: 10px;"><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Frafiz001.github.io%2Fvucse-routine%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a></div>
   <div style="display:flex; justify-content: center;">
     <button class="link rounded" style="cursor: pointer;" onclick="cachClearer();">Clear Cache</button>
     <button id="theme" class="rounded">
@@ -301,7 +302,10 @@
     </button>
   
   </div><br><br>
-  <div id="base"></div>
+
+  
+  <div id="base">
+  </div>
 
   <script>
     
@@ -477,9 +481,9 @@
             if (ghi[2] != null && ghi[1].v == givenSemester && ghi[2].v == givenSection) {
               if (j > 2 && isPreLab > 1) {
                 var sss = "";
-                if (/\[.{0,}\] ?\[.{0,}\]/i.test(td)&&json.table.rows[i].c[j+1]==null) {
+                if (/\[.{0,}\] ?\[.{0,}\]/i.test(td)) {
                   console.log(json.table.rows[i].c[j+1]);
-                  sss = " colspan='2' class='labbb' ";
+                  sss = " class='lab' "; //previously colspan='2' 
                   isPreLab = 0;
                 }
 
